@@ -1,6 +1,14 @@
 -- Creacion de schema
 CREATE SCHEMA public;
 
+-- Elimina las tablas si han sido creadas anteriormente
+DROP TABLE IF EXISTS Usuarios CASCADE; 
+DROP TABLE IF EXISTS Categorias CASCADE;
+DROP TABLE IF EXISTS Productos CASCADE;
+DROP TABLE IF EXISTS Especificaciones CASCADE;
+DROP TABLE IF EXISTS Subastas_activas CASCADE;
+
+
 -- Creacion de tablas
 CREATE TABLE Usuarios (
 	id SERIAL PRIMARY KEY,
@@ -24,7 +32,7 @@ CREATE TABLE Productos(
 
 CREATE TABLE Especificaciones(
 	id SERIAL PRIMARY KEY,
-	producto_id SERIAL REFERENCES Productos(id),
+	producto_id INT4 REFERENCES Productos(id),
 	nombre VARCHAR(32),
 	valor VARCHAR(50)
 );
