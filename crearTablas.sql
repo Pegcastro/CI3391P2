@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS Productos CASCADE;
 DROP TABLE IF EXISTS Especificaciones CASCADE;
 DROP TABLE IF EXISTS Subastas_activas CASCADE;
 DROP TABLE IF EXISTS Subastas CASCADE;
-
+DROP TABLE IF EXISTS Bids CASCADE;
 
 -- Creacion de tablas
 CREATE TABLE Usuarios (
@@ -38,6 +38,13 @@ CREATE TABLE Especificaciones(
 	valor VARCHAR(50)
 );
 
+CREATE TABLE Bids (
+	id SERIAL PRIMARY KEY,
+	monto FLOAT8,
+	usuario_id INT4 REFERENCES Usuarios(id),
+	prev_bid INT4 REFERENCES Bids(id)
+);
+
 CREATE TABLE Subastas (
 	id SERIAL PRIMARY KEY,
 	usuario_id INT4 REFERENCES Usuarios(id),
@@ -47,10 +54,13 @@ CREATE TABLE Subastas (
 	precio_base FLOAT8,
 	precio_reserva FLOAT8,
 	precio_actual FLOAT8,
+	winner_id INT4 REFERENCES Usuarios(id),
+	bid_act INT4 REFERENCES Bids(id),
 	inicio timestamp,
 	termino timestamp,
 	activa BOOLEAN NOT NULL
 );
+
 
 -- Insert de Usuarios
 INSERT INTO Usuarios(nombre, metodoP)
@@ -230,7 +240,7 @@ VALUES(29, 'memoria', '32GB');
 INSERT INTO Especificaciones(producto_id, nombre, valor)
 VALUES(30, 'color', 'negro');
 
--- Insert de Subastas
+-- Insert de Subastas AGRAEGAR LAS COSAS DE BIDS
 INSERT INTO Subastas(usuario_id, producto_id, descripcion, especificacion_id, precio_base, precio_reserva, precio_actual, inicio, termino, activa)
 VALUES(1, 1, 'Lancer en perfectas condiciones, 1 año de uso, unico dueño', 1, 2000, 3000, 2500, '2019-12-02 12:00:00', NULL, TRUE); -- Lancer rojo
 INSERT INTO Subastas(usuario_id, producto_id, descripcion, especificacion_id, precio_base, precio_reserva, precio_actual, inicio, termino, activa)
@@ -238,10 +248,12 @@ VALUES(2, 2, 'Ford Fiesta como nuevo, lo uso John Lennon', 4, 3000, 4500, 3100, 
 INSERT INTO Subastas(usuario_id, producto_id, descripcion, especificacion_id, precio_base, precio_reserva, precio_actual, inicio, termino, activa)
 VALUES(3, 14, 'Laptop de mucha versatilidad', 14, 1000, 2000, 1600, '2019-12-02 10:00:00', NULL, TRUE);
 INSERT INTO Subastas(usuario_id, producto_id, descripcion, especificacion_id, precio_base, precio_reserva, precio_actual, inicio, termino, activa)
-VALUES(4, 28, 'Fuerte y resistente telefono', 28, 1000, 2000, 1600, '2019-12-02 10:00:00', NULL, TRUE);
+VALUES(4, 28, 'Fuerte y resistente telefono', 28, 5, 2000, 1600, '2019-12-02 10:00:00', NULL, TRUE);
+INSERT INTO Subastas(usuario_id, producto_id, descripcion, especificacion_id, precio_base, precio_reserva, precio_actual, inicio, termino, activa)
+VALUES(5, 22, 'El telefono que usa Neo en la Matrix', 22, 1, 150, 45, '2019-12-02 14:00:00', NULL, TRUE);
 
 
 INSERT INTO Subastas(usuario_id, producto_id, descripcion, especificacion_id, precio_base, precio_reserva, precio_actual, inicio, termino, activa)
-VALUES(6, 6, 'Mitsubishi Signo, usado por Silvester Stallone', 6, 0.5, 7500, 5300, '2019-12-02 12:00:00', '2019-12-02 18:00:00', FALSE);
+VALUES(6, 6, 'Mitsubishi Signo, usado por Silvester Stallone', 6, 0.5, 7500, 5300, '2019-10-02 12:00:00', '2019-12-02 18:00:00', FALSE);
 INSERT INTO Subastas(usuario_id, producto_id, descripcion, especificacion_id, precio_base, precio_reserva, precio_actual, inicio, termino, activa)
 VALUES(6, 6, 'Mitsubishi Signo, usado por Britney Spears', 6, 2, 7500, 7000, '2019-12-02 03:00:00', '2019-12-02 10:00:00', FALSE);
