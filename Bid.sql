@@ -20,7 +20,7 @@ BEGIN
 
 	-- Actualiza la tabla de Subastas
 	UPDATE Subastas 
-	SET precio_actual = $3, winner_id = $2
+	SET precio_actual = $3, winner_id = $2, bid_act = (SELECT id FROM Bids WHERE prev_bid = (SELECT bid_act FROM Subastas WHERE id = $1))
 	WHERE id = $1;
 
 	RETURN TRUE; 

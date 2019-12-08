@@ -1,6 +1,6 @@
 -- Query #1: En promedio, ¿Cuáles productos tienen precios de venta más alto? ¿Los que
 -- empiezan con un precio base menor de $1 ó los que empiezan con un precio base de
--- por lo menos $1? (no puedo comparar precios de productos diferentes) NO PROBADO
+-- por lo menos $1? (no puedo comparar precios de productos diferentes)
 
 CREATE VIEW precios_menor_1 AS
 SELECT AVG(s.precio_actual), p.id, p.nombre
