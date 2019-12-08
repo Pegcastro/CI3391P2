@@ -37,7 +37,7 @@ CREATE TABLE Especificaciones(
 	valor VARCHAR(50)
 );
 
-CREATE TABLE Subastas_activas (
+CREATE TABLE Subastas (
 	id SERIAL PRIMARY KEY,
 	producto_id INT4 REFERENCES Productos(id) NOT NULL,
 	descripcion TEXT,
@@ -100,3 +100,63 @@ INSERT INTO Categorias(id, nombre, parent_id,es_hoja)
 VALUES(13, 'Nokia', 10, TRUE);
 
 -- Insert de Productos
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Lancer', 3);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Aveo', 2);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Cruze', 2);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Fiesta', 4);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Mustang', 4);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Signo', 3);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Outlander', 3);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Focus', 4);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Fusion', 4);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Optra', 2);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Corsa', 2);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('X53E', 7);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('ZenBook', 7);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('VivoBook15', 7);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('ENVY', 8);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Pavilion 15', 8);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Stream', 8);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('MacBook Air', 9);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('MacBook Pro',9);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('iMac',9);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Moto E4',11);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Moto G5',11);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Moto X4',11);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('iPhone 4',12);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('iPhone 4S',12);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('iPhone 5',12);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('iPhone X',12);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Nokia 6',13);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Nokia 7',13);
+INSERT INTO Productos(nombre, categoria_id)
+VALUES('Nokia 9',13);
