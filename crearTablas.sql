@@ -235,6 +235,13 @@ INSERT INTO Subastas(usuario_id, producto_id, descripcion, especificacion_id, pr
 VALUES(1, 1, 'Lancer en perfectas condiciones, 1 año de uso, unico dueño', 1, 2000, 3000, 2500, '2019-12-02 12:00:00', NULL, TRUE); -- Lancer rojo
 INSERT INTO Subastas(usuario_id, producto_id, descripcion, especificacion_id, precio_base, precio_reserva, precio_actual, inicio, termino, activa)
 VALUES(2, 2, 'Ford Fiesta como nuevo, lo uso John Lennon', 4, 3000, 4500, 3100, '2019-12-02 03:00:00', NULL, TRUE);
+INSERT INTO Subastas(usuario_id, producto_id, descripcion, especificacion_id, precio_base, precio_reserva, precio_actual, inicio, termino, activa)
+VALUES(3, 14, 'Laptop de mucha versatilidad', 14, 1000, 2000, 1600, '2019-12-02 10:00:00', NULL, TRUE);
+INSERT INTO Subastas(usuario_id, producto_id, descripcion, especificacion_id, precio_base, precio_reserva, precio_actual, inicio, termino, activa)
+VALUES(4, 28, 'Fuerte y resistente telefono', 28, 1000, 2000, 1600, '2019-12-02 10:00:00', NULL, TRUE);
+
 
 INSERT INTO Subastas(usuario_id, producto_id, descripcion, especificacion_id, precio_base, precio_reserva, precio_actual, inicio, termino, activa)
-VALUES(6, 6, 'Mitsubishi Signo, usado por Silvester Stallone', 6, 5000, 7500, 5300, '2019-12-02 12:00:00', '2019-12-02 18:00:00', FALSE);
+VALUES(6, 6, 'Mitsubishi Signo, usado por Silvester Stallone', 6, 0.5, 7500, 5300, '2019-12-02 12:00:00', '2019-12-02 18:00:00', FALSE);
+INSERT INTO Subastas(usuario_id, producto_id, descripcion, especificacion_id, precio_base, precio_reserva, precio_actual, inicio, termino, activa)
+VALUES(6, 6, 'Mitsubishi Signo, usado por Britney Spears', 6, 2, 7500, 7000, '2019-12-02 03:00:00', '2019-12-02 10:00:00', FALSE);
