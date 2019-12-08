@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS Categorias CASCADE;
 DROP TABLE IF EXISTS Productos CASCADE;
 DROP TABLE IF EXISTS Especificaciones CASCADE;
 DROP TABLE IF EXISTS Subastas_activas CASCADE;
+DROP TABLE IF EXISTS Subastas CASCADE;
 
 
 -- Creacion de tablas
@@ -188,3 +189,52 @@ INSERT INTO Especificaciones(producto_id, nombre, valor)
 VALUES(10, 'color', 'azul');
 INSERT INTO Especificaciones(producto_id, nombre, valor)
 VALUES(11, 'motor', '1.8');
+
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(12, 'procesador', 'i5');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(13, 'memoria', '500GB');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(14, 'RAM', '4GB');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(15, 'memoria', '1TB');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(16, 'procesador', 'i7');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(17, 'RAM', '6GB');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(18, 'SO', 'Windows');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(19, 'SO', 'iOS');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(20, 'memoria', '500GB');
+
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(21, 'color', 'rojo');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(22, 'estado', 'usado');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(23, 'memoria', '64GB');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(24, 'color', 'blanco');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(25, 'RAM', '4GB');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(26, 'estado', 'nuevo');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(27, 'color', 'dorado');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(28, 'estado', 'usado');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(29, 'memoria', '32GB');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(30, 'color', 'negro');
+
+-- Insert de Subastas
+INSERT INTO Subastas(usuario_id, producto_id, descripcion, especificacion_id, precio_base, precio_reserva, precio_actual, inicio, termino, activa)
+VALUES(1, 1, 'Lancer en perfectas condiciones, 1 año de uso, unico dueño', 1, 2000, 3000, 2500, '2019-12-02 12:00:00', NULL, TRUE); -- Lancer rojo
+INSERT INTO Subastas(usuario_id, producto_id, descripcion, especificacion_id, precio_base, precio_reserva, precio_actual, inicio, termino, activa)
+VALUES(2, 2, 'Ford Fiesta como nuevo, lo uso John Lennon', 4, 3000, 4500, 3100, '2019-12-02 03:00:00', NULL, TRUE);
+
+INSERT INTO Subastas(usuario_id, producto_id, descripcion, especificacion_id, precio_base, precio_reserva, precio_actual, inicio, termino, activa)
+VALUES(6, 6, 'Mitsubishi Signo, usado por Silvester Stallone', 6, 5000, 7500, 5300, '2019-12-02 12:00:00', '2019-12-02 18:00:00', FALSE);
