@@ -39,12 +39,16 @@ CREATE TABLE Especificaciones(
 
 CREATE TABLE Subastas (
 	id SERIAL PRIMARY KEY,
-	producto_id INT4 REFERENCES Productos(id) NOT NULL,
+	usuario_id INT4 REFERENCES Usuarios(id),
+	producto_id INT4 REFERENCES Productos(id),
 	descripcion TEXT,
 	especificacion_id INT4 REFERENCES Especificaciones(id),
 	precio_base FLOAT8,
 	precio_reserva FLOAT8,
-	precio_actual FLOAT8
+	precio_actual FLOAT8,
+	inicio timestamp,
+	termino timestamp,
+	activa BOOLEAN NOT NULL
 );
 
 -- Insert de Usuarios
@@ -160,3 +164,27 @@ INSERT INTO Productos(nombre, categoria_id)
 VALUES('Nokia 7',13);
 INSERT INTO Productos(nombre, categoria_id)
 VALUES('Nokia 9',13);
+
+-- Insert de Especificaciones
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(1, 'color', 'rojo');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(2, 'color', 'blanco');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(3, 'estado', 'usado');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(4, 'motor', '1.8');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(5, 'color', 'amarillo');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(6, 'estado', 'nuevo');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(7, 'motor', '2.0');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(8, 'color', 'negro');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(9, 'estado', 'nuevo');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(10, 'color', 'azul');
+INSERT INTO Especificaciones(producto_id, nombre, valor)
+VALUES(11, 'motor', '1.8');
