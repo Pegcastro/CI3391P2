@@ -9,7 +9,7 @@ CREATE TABLE Usuarios (
 );
 
 CREATE TABLE Categorias(
-	id SERIAL PRIMARY KEY,
+	id INT4 PRIMARY KEY,
 	nombre VARCHAR(32) NOT NULL,
 	parent_id INT4 REFERENCES Categorias(id),
 	es_hoja BOOLEAN
@@ -41,24 +41,53 @@ CREATE TABLE Subastas_activas (
 
 -- Insert de Usuarios
 INSERT INTO Usuarios(nombre, metodoP)
-VALUES("Edith", "Credito");
+VALUES('Edith', 'Credito');
 INSERT INTO Usuarios(nombre, metodoP)
-VALUES("Vivien", "Transferencia");
+VALUES('Vivien', 'Transferencia');
 INSERT INTO Usuarios(nombre, metodoP)
-VALUES("Daniel", "Crypto");
+VALUES('Daniel', 'Crypto');
 INSERT INTO Usuarios(nombre, metodoP)
-VALUES("Laurella", "Debito");
+VALUES('Laurella', 'Debito');
 INSERT INTO Usuarios(nombre, metodoP)
-VALUES("Osbert", "Crypto");
+VALUES('Osbert', 'Crypto');
 INSERT INTO Usuarios(nombre, metodoP)
-VALUES("Sebastian", "Debito");
+VALUES('Sebastian', 'Debito');
 INSERT INTO Usuarios(nombre, metodoP)
-VALUES("Cleopatra", "Crédito");
+VALUES('Cleopatra', 'Crédito');
 INSERT INTO Usuarios(nombre, metodoP)
-VALUES("Doy", "Transferencia");
+VALUES('Doy', 'Transferencia');
 INSERT INTO Usuarios(nombre, metodoP)
-VALUES("Anna", "Crédito");
+VALUES('Anna', 'Crédito');
 INSERT INTO Usuarios(nombre, metodoP)
-VALUES("Diana", "Transferencia");
+VALUES('Diana', 'Transferencia');
 
 -- Insert de Categorias
+INSERT INTO Categorias(id, nombre, parent_id, es_hoja)
+VALUES(0, 'Motores', NULL, FALSE);
+INSERT INTO Categorias(nombre, parent_id, es_hoja)
+VALUES(1, 'Carros y Camionetas', 0, FALSE);
+INSERT INTO Categorias(nombre, parent_id, es_hoja)
+VALUES(2, 'Chevrolet', 1, TRUE);
+INSERT INTO Categorias(nombre, parent_id, es_hoja)
+VALUES(3, 'Mitsubishi', 1, TRUE);
+INSERT INTO Categorias(nombre, parent_id, es_hoja)
+VALUES(4, 'Ford', 1, TRUE);
+INSERT INTO Categorias(id, nombre, parent_id, es_hoja)
+VALUES(5, 'Electronics', NULL, FALSE);
+INSERT INTO Categorias(nombre, parent_id, es_hoja)
+VALUES(6, 'Laptops', 5, FALSE);
+INSERT INTO Categorias(nombre, parent_id, es_hoja)
+VALUES(7, 'Asus', 6, TRUE);
+INSERT INTO Categorias(nombre, parent_id, es_hoja)
+VALUES(8, 'HP', 6, TRUE);
+INSERT INTO Categorias(nombre, parent_id, es_hoja)
+VALUES(9, 'Mac', 6, TRUE);
+INSERT INTO Categorias(nombre, parent_id, es_hoja)
+VALUES(10, 'Celulares', 5, FALSE);
+INSERT INTO Categorias(nombre, parent_id, es_hoja)
+VALUES(11, 'Motorola', 10, TRUE);
+INSERT INTO Categorias(nombre, parent_id, es_hoja)
+VALUES(12, 'Iphone', 10, TRUE);
+INSERT INTO Categorias(nombre, parent_id, es_hoja)
+VALUES(13, 'Nokia', 10, TRUE);
+
